@@ -1,0 +1,79 @@
+@use 'variaveis';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: variaveis.$corTexto;
+}
+
+header {
+    background-color: variaveis.$corPrimaria;
+    color: variaveis.$corSecundaria;
+    padding: variaveis.$padding;
+    text-align: center;
+
+    nav {
+        a {
+            color: variaveis.$corSecundaria;
+            margin: 0 1em;
+            text-decoration: none;
+            &:hover {
+            text-decoration: underline;
+            }
+        }
+    }
+}
+
+section {
+    padding: 2 * variaveis.$padding;
+    text-align: center;
+}
+
+.destinos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.destino-card {
+    background-color: variaveis.$corFundo;
+    border: 1px solid lighten(variaveis.$corPrimaria, 40%);
+    padding: variaveis.$padding;
+    width: 200px;
+    text-align: left;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+#contato-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+
+    input,
+    textarea,
+    .btn {
+        margin: 0.5em 0;
+        padding: 0.5em;
+        border-radius: variaveis.$borda;
+    }
+
+    .btn {
+        background-color: variaveis.$corPrimaria;
+        color: variaveis.$corSecundaria;
+        border: none;
+        cursor: pointer;
+        &:hover {
+        background-color: darken(variaveis.$corPrimaria, 10%);
+        }
+    }
+}
