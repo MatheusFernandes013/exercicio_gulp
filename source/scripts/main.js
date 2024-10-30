@@ -3,17 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Elemento diário encontrado:", diarioTexto); 
 
     document.getElementById("botao").addEventListener("click", function() {
-    
-        const estilo = diarioTexto.style.display;
 
-        console.log("Estilo atual do diário:", estilo); 
+        diarioTexto.classList.toggle("hidden");
 
-        if (estilo === "none" || estilo === "") {
-            diarioTexto.style.display = "block";
-            console.log("Diário exibido!"); 
+        if (!diarioTexto.classList.contains("hidden")) {
+            console.log("Diário exibido!");
         } else {
-            diarioTexto.style.display = "none";
-            console.log("Diário oculto!"); 
+            console.log("Diário oculto!");
         }
     });
 

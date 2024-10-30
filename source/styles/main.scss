@@ -1,5 +1,20 @@
 @use 'variaveis';
 
+@mixin estiloBtn {
+    background-color: variaveis.$corPrimaria;
+    color: variaveis.$corSecundaria;
+    border: none;
+    cursor: pointer;
+    &:hover {
+    background-color: darken(variaveis.$corPrimaria, 10%);
+}}
+
+@mixin margensForm {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-radius: variaveis.$borda;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -62,18 +77,19 @@ section {
     input,
     textarea,
     .btn {
-        margin: 0.5em 0;
-        padding: 0.5em;
-        border-radius: variaveis.$borda;
+        @include margensForm;
     }
 
     .btn {
-        background-color: variaveis.$corPrimaria;
-        color: variaveis.$corSecundaria;
-        border: none;
-        cursor: pointer;
-        &:hover {
-        background-color: darken(variaveis.$corPrimaria, 10%);
-        }
+        @include estiloBtn;
     }
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    @include margensForm;
+    @include estiloBtn;
 }
